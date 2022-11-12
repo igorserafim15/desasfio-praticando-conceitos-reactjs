@@ -1,0 +1,17 @@
+.header {
+  height: 20rem;
+  background: var(--gray-700);
+  display: flex;
+}
+
+.image {
+  margin: auto;
+  height: 4.8rem;
+  width: 12.6rem;
+}
+
+.inputSubmit {
+  margin-top: -2.7rem !important;
+  display: flex;
+  gap: .8rem;
+}

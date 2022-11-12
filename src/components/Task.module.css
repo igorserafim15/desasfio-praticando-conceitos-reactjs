@@ -1,0 +1,94 @@
+.task {
+  background-color: var(--gray-500);
+  display: flex;
+  padding: 1.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+  margin-bottom: 1.2rem;
+}
+
+.through {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.task button {
+  background: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 2px;
+}
+
+.task button:hover {
+  color: var(--danger);
+}
+
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox span {
+  border-radius: 50%;
+  border: 3px solid var(--blue-300);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+
+}
+
+.checkbox:hover input ~ span {
+  border: 3px solid var(--blue-300);
+  background-color: #4ea7de55;
+}
+
+.checkbox input:checked ~ span {
+  background-color: var(--purple-300);
+  border: 3px solid var(--purple-300);
+}
+
+.checkbox span:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox input:checked ~ span:after {
+  display: block;
+}
+
+.checkbox span:after {
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

@@ -1,0 +1,19 @@
+.emptyTasks {
+  text-align: center;
+  padding: 6.4rem 2.4rem;
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+}
+
+.emptyTasks img {
+  margin: 0 auto 1.6rem;
+}
+
+.title {
+  color: var(--gray-300);
+  font-weight: bold;
+}
+
+.subtitle {
+  color: var(--gray-300);
+}

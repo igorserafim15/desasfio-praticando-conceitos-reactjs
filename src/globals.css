@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+/**
+ * Remove anchor text-decoration
+ */
+ a {
+  text-decoration: none;
+}
+
+/**
+ * Remove list-style
+ */
+ol, ul {
+  list-style: none;
+}
+
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, a, em, img, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, article, footer, header, nav, section, main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul {
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+:root {
+  --white: #fff;
+  --gray-100: #F2F2F2;
+  --gray-200: #D9D9D9;
+  --gray-300: #808080;
+  --gray-400: #333333;
+  --gray-500: #262626;
+  --gray-600: #1A1A1A;
+  --gray-700: #0D0D0D;
+
+  --purple-300: #8284FA;
+  --purple-500: #5E60CE;
+  --blue-300: #4EA8DE;
+  --blue-500: #1E6F9F;
+
+  --danger: #E25858;
+}
+
+body * {
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+  color: var(--gray-100);
+}
+
+body {
+  background-color: var(--gray-600);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  outline-offset: 0.25rem;
+}
+
+img,
+iframe,
+object,
+embed,
+video {
+  max-width: 100%;
+}
+
+img[width],
+iframe[width],
+object[width],
+embed[width],
+video[width] {
+  width: auto;
+  /* Defer to max-width */
+}
+
+img[width][height],
+iframe[width][height],
+object[width][height],
+embed[width][height],
+video[width][height] {
+  height: auto;
+  /* Preserve aspect ratio */
+}
+
+label {
+  cursor: pointer;
+}
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--blue-500);
+}
+
+:focus:not(:focus-visible) {
+  box-shadow: none;
+  outline: 0;
+}
+
+:focus-visible {
+  outline-color: var(--blue-500);
+}
+
+::-moz-selection {
+  background-color: var(--blue-500);
+}
+
+::selection {
+  background-color: var(--blue-500);
+}
+
+::marker {
+  color: var(--blue-500);
+}
+
+::-webkit-calendar-picker-indicator {
+  color: var(--blue-500);
+}
+
+::-webkit-clear-button {
+  color: var(--blue-500);
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  color: var(--blue-500);
+}
+
+.container {
+  max-width: 73.6rem;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
