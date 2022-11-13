@@ -3,42 +3,37 @@ import './globals.css'
 import { Header } from './components/Header'
 import { EmptyTasks } from './components/EmptyTasks'
 import { Task } from './components/Task'
-import React from 'react'
+import React, { FormEvent } from 'react'
 import { Info } from './components/Info'
-
-interface Todo {
-  checked: boolean;
-  text: string;
-}
-
-const todoList: Todo[] = [
-  {
-    checked: false,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
-  },
-  {
-    checked: false,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
-  },
-  {
-    checked: false,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
-  }
-]
+import Todo from './types/Todo'
 
 export const App = () => {
-  const [todo, setTodo] = React.useState('')
+  const [todoList, setTodoList] = React.useState<Todo[]>([])
+  const [value, setValue] = React.useState('')
 
-  console.log(todo)
+  function handleSetValue(event: FormEvent) {
+    event.preventDefault()
+    const todo: Todo = {
+      checked: false,
+      text: value,
+    }
+    setTodoList([...todoList, todo])
+    setValue('')
+  }
 
-  // function handleSetTodo() {}
+  function handleDeleteTodo(todo: Todo) {
+    const newTodoList = todoList.filter(item => {
+      return item != todo
+    })
+    setTodoList(newTodoList)
+  }
 
   return (
     <>
       <Header 
-        value={todo}
-        setValue={setTodo}
-        // onSubmit={handleSetTodo}
+        value={value}
+        setValue={setValue}
+        onSubmit={handleSetValue}
       />
 
       <Info todoList={todoList} />
@@ -48,9 +43,11 @@ export const App = () => {
           <EmptyTasks />
         ) : (
           <ul>
-            {todoList.map((item, index) => (
+            {todoList.map(todo => (
               <Task
-                key={index}
+                key={todo.text}
+                todo={todo}
+                onDeleteTodo={handleDeleteTodo}
               />
             ))}
           </ul>

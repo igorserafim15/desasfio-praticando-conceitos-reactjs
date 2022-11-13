@@ -1,6 +1,7 @@
 .task {
   background-color: var(--gray-500);
-  display: flex;
+  display: grid;
+  grid-template-columns: 4rem 1fr 4rem;
   padding: 1.6rem;
   border-radius: 8px;
   border: 1px solid var(--gray-400);

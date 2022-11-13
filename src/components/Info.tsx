@@ -1,9 +1,5 @@
 import style from '../App.module.css'
-
-interface Todo {
-  checked: boolean;
-  text: string;
-}
+import Todo from '../types/Todo'
 
 interface InfoProps {
   todoList: Todo[];
